@@ -1,0 +1,95 @@
+$border: 10px;
+
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main{
+    height: 100vh;
+    width: 100vw;
+    background-image: url(../../assets/background.jpg);
+    @include flex();
+}
+
+.container{
+    height: 70vh;
+    width: 80%;
+    @include flex();
+}
+
+.intro{
+    height: 100%;
+    width: 60%;
+    border-top-left-radius: $border;
+    border-bottom-left-radius: $border;
+    padding: 3em;
+
+    & h1{
+        font-size: 2.5em;
+        width: 15ch;
+    }
+}
+
+.form-panel{
+    background-color: var(--primaryColor);
+    color: var(--lightColor);
+    height: 100%;
+    width: 40%;
+    border-top-right-radius: $border;
+    border-bottom-right-radius: $border;
+    @include flex();
+
+    & h2{
+        font-size: 2em;
+    }
+
+    & :not(a){
+        margin: 0.5em;
+    }
+
+    & form{
+        @include flex();
+        flex-direction: column;
+    }
+
+    & a{
+        color: var(--accentColor);
+        margin-block: 2em;
+    }
+
+    & input{
+        background-color: var(--primaryColorVariation);
+        color: var(--lightColor);
+        border: none;
+        width: 90%;
+        font-size: 1.6em;
+        border-radius: $border;
+    }
+
+    & ::placeholder{
+        color: var(--lightColor);
+        padding: 0.3em;
+    }
+
+    & button{
+        padding: 0.5em 1em;
+        width: 70%;
+        font-size: 1.2em;
+        border-radius: $border;
+        background-color: var(--accentColor);
+        color: var(--lightColor);
+        cursor: pointer;
+    }
+
+    & p{
+        width: 22ch;
+        text-align: center;
+    }
+}
+
+.intro{
+    background: rgba(255,255,255,0.5);
+    backdrop-filter: blur(20px);
+}
