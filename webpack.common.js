@@ -9,7 +9,6 @@
 // *Remember rules should be an array[]*
 
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin'); //eslint-disable-line
 const CopyWebpackPlugin = require('copy-webpack-plugin'); //eslint-disable-line
 
 module.exports = {
@@ -20,9 +19,6 @@ module.exports = {
     vendor: './src/vendor.js',
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/template.ejs',
-    }),
     new CopyWebpackPlugin({
       patterns: [
         {
